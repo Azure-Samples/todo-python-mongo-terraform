@@ -31,7 +31,7 @@ resource "random_string" "resource_token" {
 # Deploy application insights
 # ------------------------------------------------------------------------------------------------------
 module "applicationinsights" {
-  source         = "modules"
+  source         = "./modules"
   location       = var.location
   rg_name        = azurerm_resource_group.rg.name
   env_name       = var.name
