@@ -21,7 +21,8 @@
         "ms-azuretools.vscode-bicep",
         "ms-azuretools.vscode-docker",
         "ms-vscode.vscode-node-azure-pack",
-        "ms-python.python"
+        "ms-python.python",
+        "hashicorp.terraform"
     ],
     "forwardPorts": [
         3000,
