@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: todo-python-mongo-terraform
+metadata:
+  template: todo-python-mongo-terraform@0.0.1-beta
+infra:
+  provider: terraform
+services:
+  web:
+    project: ./src/web
+    dist: build
+    language: js
+    host: appservice
+  api:
+    project: ./src/api
+    language: py
+    host: appservice
