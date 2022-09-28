@@ -84,8 +84,6 @@ module "appserviceplan" {
   rg_name        = azurerm_resource_group.rg.name
   tags           = azurerm_resource_group.rg.tags
   resource_token = local.resource_token
-  os_type        = "Linux"
-  sku_name       = "B1"
 }
 
 # ------------------------------------------------------------------------------------------------------
@@ -106,7 +104,6 @@ module "appserviceweb" {
   }
 
   app_command_line = "pm2 serve /home/site/wwwroot --no-daemon --spa"
-  node_version     = "16-lts"
 }
 
 # ------------------------------------------------------------------------------------------------------
@@ -130,7 +127,6 @@ module "appserviceapi" {
   }
 
   app_command_line = local.api_command_line
-  python_version   = "3.8"
   identity = [{
     type = "SystemAssigned"
   }]
