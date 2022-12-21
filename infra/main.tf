@@ -137,7 +137,7 @@ module "api" {
 # Deploy app service apim
 # ------------------------------------------------------------------------------------------------------
 module "apim"  {
-  source                    = "./modules/gateway/apim"
+  source                    = "./modules/apim"
   name                      = "apim-deployment"
   location                  = var.location
   rg_name                   = azurerm_resource_group.rg.name
@@ -150,7 +150,7 @@ module "apim"  {
 # Deploy app service apim-api
 # ------------------------------------------------------------------------------------------------------
 module "apimApi" {
-  source                    = "./modules/gateway/apim-api"
+  source                    = "./modules/apim-api"
   name                      = "apim-api-deployment"
   rg_name                   = azurerm_resource_group.rg.name
   apiName                   = "todo-api"
