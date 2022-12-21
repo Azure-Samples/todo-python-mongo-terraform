@@ -137,23 +137,23 @@ module "api" {
 # Deploy app service apim
 # ------------------------------------------------------------------------------------------------------
 module "apim"  {
-  source                  = "./modules/apim"
-  name                    = "apim-deployment"
-  location                = var.location
-  rg_name                 = azurerm_resource_group.rg.name
-  tags                    = merge(local.tags, { "azd-service-name" : var.environment_name })
-  applicationInsightsName = local.resource_token
-  sku                     = "Consumption"
+  source                    = "./modules/apim"
+  name                      = "apim-deployment"
+  location                  = var.location
+  rg_name                   = azurerm_resource_group.rg.name
+  tags                      = merge(local.tags, { "azd-service-name" : var.environment_name })
+  application_insights_name = local.resource_token
+  sku                       = "Consumption"
 } 
 
 # ------------------------------------------------------------------------------------------------------
 # Deploy app service apim-api
 # ------------------------------------------------------------------------------------------------------
 module "apimApi" {
-  source                  = "./modules/apim-api"
-  name                    = "apim-api-deployment"
-  rg_name                 = azurerm_resource_group.rg.name
-  apiName                 = "todo-api"
-  apiDisplayName          = "Simple Todo API"
-  apiPath                 = "todo"
+  source                    = "./modules/apim-api"
+  name                      = "apim-api-deployment"
+  rg_name                   = azurerm_resource_group.rg.name
+  apiName                   = "todo-api"
+  apiDisplayName            = "Simple Todo API"
+  apiPath                   = "todo"
 }
