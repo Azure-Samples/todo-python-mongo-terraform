@@ -36,7 +36,7 @@ resource "azurerm_api_management_api" "api" {
 
   import {
     content_format      = "openapi"
-    content_value       = file("../../../../api/common/openapi.yaml")
+    content_value       = file("../../../src/api/openapi.yaml")
   }
 }
 
