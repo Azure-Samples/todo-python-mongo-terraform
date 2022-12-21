@@ -45,7 +45,7 @@ resource "azurerm_api_management_api_policy" "policies"{
   api_management_name   = azurerm_api_management_api.api.api_management_name
   resource_group_name   = var.rg_name
 
-  xml_content           = "./modules/apim-api-policy.xml"
+  xml_content           = "./modules/apim/apim-api-policy.xml"
 }
 
 resource "azurerm_api_management_api_diagnostic" "diagnostics"{
