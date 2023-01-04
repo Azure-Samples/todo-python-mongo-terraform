@@ -138,7 +138,7 @@ module "api" {
 # ------------------------------------------------------------------------------------------------------
 module "apim"  {
   count                     = "${var.useAPIM == true ? 1 : 0}"
-  source                    = "../../../../../../common/infra/terraform/core/gateway/apim"
+  source                    = "./modules/apim"
   name                      = "apim-${local.resource_token}"
   location                  = var.location
   rg_name                   = azurerm_resource_group.rg.name
@@ -152,7 +152,7 @@ module "apim"  {
 # ------------------------------------------------------------------------------------------------------
 module "apimApi" {
   count                     = "${var.useAPIM == true ? 1 : 0}"
-  source                    = "../../../../../../common/infra/terraform/core/gateway/apim-api"
+  source                    = "./modules/apim-api"
   name                      = module.apim[0].APIM_SERVICE_NAME
   rg_name                   = azurerm_resource_group.rg.name
   web_front_end_url         = module.web.URI
