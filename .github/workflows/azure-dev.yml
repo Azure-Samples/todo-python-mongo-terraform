@@ -20,11 +20,6 @@ jobs:
       - name: Install azd
         uses: Azure/setup-azd@v0.1.0
 
-      - name: Install Azure Function Core Tools
-        run: |
-          sudo apt-get update
-          sudo apt-get install azure-functions-core-tools-4
-
       - name: Log in with Azure
         run: |
           $info = $Env:AZURE_CREDENTIALS | ConvertFrom-Json -AsHashtable;
