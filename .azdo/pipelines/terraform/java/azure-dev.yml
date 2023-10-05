@@ -26,6 +26,12 @@ steps:
     env:
       AZURE_CREDENTIALS: $(AZURE_CREDENTIALS)
 
+  - task: JavaToolInstaller@0
+    inputs:
+      versionSpec: '17'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
+      
   - task: AzureCLI@2
     displayName: Provision Infrastructure
     inputs:
